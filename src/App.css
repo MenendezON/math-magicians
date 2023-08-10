@@ -23,13 +23,13 @@ table {
 
 caption {
   background-color: #858694;
-  height: 50px;
+  height: 40px;
 }
 
-caption > input {
+caption > .input {
   text-align: end;
   width: 95%;
-  height: 40px;
+  height: 30px;
   margin: 3px 0;
   font-size: 15pt;
   background-color: #858694;
@@ -55,7 +55,7 @@ caption > input {
   width: 200px;
 }
 
-.showKeypad > button[value="/"],
+.showKeypad > button[value="÷"],
 .showKeypad > button[value="x"],
 .showKeypad > button[value="-"],
 .showKeypad > button[value="+"],

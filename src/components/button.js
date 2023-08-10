@@ -1,23 +1,29 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable react/destructuring-assignment */
-/* eslint-disable react/prefer-stateless-function */
 import React from 'react';
+import PropTypes from 'prop-types';
 
-export default class Button extends React.Component {
-  constructor(props) {
-    super(props);
-    this.handleClick = this.handleClick.bind(this);
-  }
+const Keys = ({ click }) => {
+  const keys = [
+    'AC', '+/-', '%', '÷', '7', '8', '9', 'x', '4', '5', '6', '-', '1', '2', '3', '+', '0', '.', '=',
+  ];
 
-  handleClick() {
-    this.props.handleClick(this.props.value);
-  }
+  return (
+    <div className="showKeypad">
+      {keys.map((key) => (
+        <button
+          key={key}
+          type="button"
+          value={key}
+          onClick={() => click(key)}
+        >
+          {key}
+        </button>
+      ))}
+    </div>
+  );
+};
 
-  render() {
-    return (
-      <button type="button" value={this.props.value} onClick={this.props.handleClick}>
-        {this.props.value}
-      </button>
-    );
-  }
-}
+Keys.propTypes = {
+  click: PropTypes.func.isRequired,
+};
+
+export default Keys;

@@ -1,33 +1,32 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
+import Keys from './button';
 import calculate from '../logic/calculate';
-import Display from './display';
-import Keypad from './keypad';
 
-export default class Calculator extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      total: '0',
-      next: null,
-    };
+const Calculator = () => {
+  const [showInput, setShowInput] = useState({
+    total: 0,
+    next: null,
+    operation: null,
+  });
 
-    this.handleClick = this.handleClick.bind(this);
-  }
+  const handleClick = (key) => {
+    const calc = calculate(showInput, key);
+    setShowInput(calc);
+  };
+  return (
+    <table>
+      <caption>
+        <p className="input">
+          {showInput.total}
+          {' '}
+          {showInput.operation}
+          {' '}
+          {showInput.next}
+        </p>
+      </caption>
+      <Keys click={handleClick} />
+    </table>
+  );
+};
 
-  handleClick(e) {
-    this.setState((state) => (calculate(state, e.target.innerText)));
-  }
-
-  render() {
-    const { total, next } = this.state;
-    let result = '0';
-    result = next || total;
-
-    return (
-      <table>
-        <Display result={result} />
-        <Keypad handleClick={this.handleClick} />
-      </table>
-    );
-  }
-}
+export default Calculator;
