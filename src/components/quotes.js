@@ -21,7 +21,6 @@ const QuoteComponent = () => {
       })
       .then((data) => {
         setQuote(data[0].quote);
-        console.log(data[0].quote);
         setIsLoading(false);
       })
       .catch((error) => {
