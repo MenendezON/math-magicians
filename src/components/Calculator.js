@@ -1,49 +1,32 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { useState } from 'react';
+import Keys from './button';
+import calculate from '../logic/calculate';
 
-const Button = ({ name }) => <td>{name}</td>;
+const Calculator = () => {
+  const [showInput, setShowInput] = useState({
+    total: 0,
+    next: null,
+    operation: null,
+  });
 
-Button.propTypes = {
-  name: PropTypes.string.isRequired,
-};
-
-function Calculator() {
+  const handleClick = (key) => {
+    const calc = calculate(showInput, key);
+    setShowInput(calc);
+  };
   return (
     <table>
       <caption>
-        <input type="text" value="0" disabled />
+        <p className="input">
+          {showInput.total}
+          {' '}
+          {showInput.operation}
+          {' '}
+          {showInput.next}
+        </p>
       </caption>
-      <tr>
-        <Button name="AC" />
-        <Button name="+/-" />
-        <Button name="%" />
-        <Button name="/" />
-      </tr>
-      <tr>
-        <Button name="7" />
-        <Button name="8" />
-        <Button name="9" />
-        <Button name="x" />
-      </tr>
-      <tr>
-        <Button name="4" />
-        <Button name="5" />
-        <Button name="6" />
-        <Button name="-" />
-      </tr>
-      <tr>
-        <Button name="1" />
-        <Button name="2" />
-        <Button name="3" />
-        <Button name="+" />
-      </tr>
-      <tr>
-        <td colSpan="2">0</td>
-        <Button name="." />
-        <Button name="=" />
-      </tr>
+      <Keys click={handleClick} />
     </table>
   );
-}
+};
 
 export default Calculator;

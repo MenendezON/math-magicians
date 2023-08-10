@@ -15,34 +15,50 @@ h1 {
 }
 
 table {
+  width: 400px;
   margin: 0 auto;
   border: 1px solid silver;
   border-collapse: collapse;
 }
 
-td {
-  border: 1px solid silver;
-  padding: 20px 30px;
-  cursor: pointer;
-  background-color: #e0e0e0;
-}
-
-tr td:last-child {
-  background-color: #f5913e;
-}
-
 caption {
   background-color: #858694;
-  height: 50px;
+  height: 40px;
 }
 
-caption > input {
+caption > .input {
   text-align: end;
   width: 95%;
-  height: 40px;
+  height: 30px;
   margin: 3px 0;
   font-size: 15pt;
   background-color: #858694;
   border: 0;
   color: #fff;
+}
+
+.showKeypad {
+  justify-content: space-between;
+  width: 400px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.showKeypad > button {
+  width: 100px;
+  height: 60px;
+  font-weight: bold;
+  border: 1px solid silver;
+}
+
+.showKeypad > button[value="0"] {
+  width: 200px;
+}
+
+.showKeypad > button[value="÷"],
+.showKeypad > button[value="x"],
+.showKeypad > button[value="-"],
+.showKeypad > button[value="+"],
+.showKeypad > button[value="="] {
+  background-color: #f5913e;
 }
