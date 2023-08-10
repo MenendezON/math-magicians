@@ -12,7 +12,7 @@ const QuoteComponent = () => {
       headers: {
         'X-Api-Key': keys.APIKEY,
       },
-    })
+    }) 
       .then((response) => {
         if (!response.ok) {
           throw new Error('Network response was not ok');
