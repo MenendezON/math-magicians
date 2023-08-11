@@ -8,10 +8,19 @@ body {
 
 .App {
   text-align: center;
+  display: flex;
+  width: 1000px;
+  margin: 150px auto 10px;
 }
 
-h1 {
-  margin: 150px auto 10px;
+.side-left {
+  border: 1px solid silver;
+  border-radius: 15px;
+  padding: 20px;
+  margin: 85px 30px 0;
+  font-size: 23pt;
+  color: silver;
+  font-style: italic;
 }
 
 table {

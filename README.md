@@ -85,9 +85,10 @@ Install this project with:
 
 ### Lauch
 
-Install this project with:
-
-- npm start
+To run the project:
+- Go to `/src/components/quotes.js`.
+- Replace API key with yours in a `.conf` file.
+- Then, execute the following command: npm start
 
 ### Run tests
 
