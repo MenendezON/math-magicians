@@ -16,7 +16,7 @@ const QuoteComponent = () => {
           method: 'GET',
           headers: {
             'Content-type': 'application/json',
-            'X-Api-Key': process.env.REACT_APP_QUOTE_API_KEY_0,
+            'X-Api-Key': 'AU7da7u0Juq/mKJbYvoBQw==YI9RvJWpSzEGKX6T',
           },
         });
         const result = await quoteApi.json();
