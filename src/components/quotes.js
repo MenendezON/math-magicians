@@ -1,32 +1,33 @@
 import React, { useState, useEffect } from 'react';
-import keys from '../config';
 
 const QuoteComponent = () => {
-  const [quote, setQuote] = useState('');
+  const [quote, setQuote] = useState({
+    quote: 'Non-violence requires a double faith, faith in God and also faith in man.',
+    author: 'Mahatma Gandhi',
+  });
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    // Fetch quote data from the API using X-Api-Key header
-    fetch('https://api.api-ninjas.com/v1/quotes?category=happiness', {
-      headers: {
-        'X-Api-Key': keys.APIKEY,
-      },
-    })
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-        return response.json();
-      })
-      .then((data) => {
-        setQuote(data[0].quote);
-        setIsLoading(false);
-      })
-      .catch((error) => {
-        setError(error);
-        setIsLoading(false);
-      });
+    const fetchData = async () => {
+      setIsLoading(true);
+      try {
+        const quoteApi = await fetch('https://api.api-ninjas.com/v1/quotes?category=faith', {
+          method: 'GET',
+          headers: {
+            'Content-type': 'application/json',
+            'X-Api-Key': process.env.REACT_APP_QUOTE_API_KEY_0,
+          },
+        });
+        const result = await quoteApi.json();
+        const dataArr = [result[0].quote, result[0].author];
+        setQuote(dataArr);
+      } catch (error) {
+        setError(true);
+      }
+      setIsLoading(false);
+    };
+    fetchData();
   }, []);
 
   if (isLoading) {
