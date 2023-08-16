@@ -1,5 +1,5 @@
 import './App.css';
-import { Route, Routes, Link } from 'react-router-dom';
+import { Route, Routes, NavLink } from 'react-router-dom';
 import Home from './pages/Home';
 import QuoteComponent from './pages/Quote';
 import Calculator from './pages/Calculator';
@@ -14,13 +14,28 @@ function App() {
         <nav>
           <ul>
             <li>
-              <Link to="/">Home</Link>
+              <NavLink
+                to="/"
+                className={({ isPending }) => (isPending ? 'active' : 'pending')}
+              >
+                Home
+              </NavLink>
             </li>
             <li>
-              <Link to="/calculator">Calculator</Link>
+              <NavLink
+                to="/calculator"
+                className={({ isPending }) => (isPending ? 'active' : 'pending')}
+              >
+                Calculator
+              </NavLink>
             </li>
             <li>
-              <Link to="/quote">Quote</Link>
+              <NavLink
+                to="/quote"
+                className={({ isPending }) => (isPending ? 'active' : 'pending')}
+              >
+                Quote
+              </NavLink>
             </li>
           </ul>
         </nav>

@@ -46,6 +46,10 @@ nav ul li a:hover {
   color: gray;
 }
 
+a[aria-current=page] {
+  color: gray;
+}
+
 main {
   height: 80vh;
   width: 85%;
