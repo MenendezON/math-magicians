@@ -44,10 +44,15 @@ const QuoteComponent = () => {
   }
 
   return (
-    <div>
-      Quote : &quot;
-      {quote}
-      &quot;
+    <div className="quote-board">
+      <div className="quote-content">
+        <q>{quote[0]}</q>
+      </div>
+      <div className="quote-author">
+        -
+        {' '}
+        {quote[1]}
+      </div>
     </div>
   );
 };

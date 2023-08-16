@@ -28,7 +28,7 @@
 
 # 📖 [NYM-Capstone] <a name="about-project"></a>
 
-Math Magicians, it's a simple website based on React and linters.
+Math Magicians, it's a website project. It is a single-page app project based on React that allows users to make simple calculations and read a random faith-related quote.
 
 ## 🛠 Built With <a name="built-with"></a>
 
