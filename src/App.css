@@ -1,26 +1,82 @@
+@font-face {
+  font-family: GreatVibe;
+  src: url(./assets/GreatVibes-Regular.ttf);
+}
+
 body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-weight: bold;
   font-size: 13pt;
+  height: 100vh;
+  color: white;
+  background-image: url('./assets/background.gif');
+  background-size: contain;
 }
 
-.App {
-  text-align: center;
+header {
   display: flex;
-  width: 1000px;
-  margin: 150px auto 10px;
+  justify-content: space-between;
+  padding: 0 100px;
 }
 
-.side-left {
-  border: 1px solid silver;
-  border-radius: 15px;
-  padding: 20px;
-  margin: 85px 30px 0;
-  font-size: 23pt;
-  color: silver;
-  font-style: italic;
+header > div {
+  font-size: 3em;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+nav ul {
+  list-style: none;
+}
+
+nav ul li {
+  display: inline;
+}
+
+nav ul li a {
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  margin: 0 15px;
+}
+
+nav ul li a:hover {
+  color: gray;
+}
+
+main {
+  height: 80vh;
+  width: 85%;
+  border-radius: 8px;
+  margin: 25px auto;
+  padding: 5px 15px;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+h2 {
+  font-size: 25pt;
+  border-bottom: 2px solid gray;
+  padding-bottom: 10px;
+}
+
+article p {
+  font-weight: 100;
+  line-height: 1.5;
+  text-align: justify;
+  font-size: 14pt;
+}
+
+.app {
+  display: flex;
+  text-align: center;
+  padding-top: 50px;
+}
+
+.side-left,
+.side-right {
+  width: 50%;
 }
 
 table {
@@ -70,4 +126,20 @@ caption > .input {
 .showKeypad > button[value="+"],
 .showKeypad > button[value="="] {
   background-color: #f5913e;
+}
+
+.quote-board {
+  margin: 25px;
+}
+
+.quote-board .quote-content {
+  font-family: GreatVibe, sans-serif;
+  font-size: 50pt;
+  text-align: center;
+  font-weight: 100;
+}
+
+.quote-board .quote-author {
+  font-size: 30pt;
+  text-align: right;
 }
