@@ -1,4 +1,3 @@
-/* eslint-disable import/extensions */
 import '@testing-library/jest-dom';
 import calculate from '../logic/calculate';
 
